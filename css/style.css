@@ -1,3 +1,330 @@
+/* 스마트폰 모바일(세로) */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  body {
+    font-size: 16px;
+    /* 폰트 크기 조정 */
+    width: 100%;
+    /* 가로폭 조정 */
+    margin: 0;
+    /* 바깥 여백 제거 */
+    padding: 0;
+    /* 안쪽 여백 제거 */
+  }
+}
+
 .hidden {
   display: none;
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  opacity: 80%;
+}
+
+/* 이미지를 배경 이미지로 넣기 위한 css */
+
+body {
+  font-family: "Roboto Slab", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  /* 웹페이지에 스크롤바 생기는거 방지 */
+}
+
+#login-form,
+#clock,
+#today,
+#greeting,
+#todo-form,
+#todo-list {
+  color: #e672a0;
+  width: 400px;
+  max-width: 100%;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+form#login-form {
+  position: relative;
+  bottom: 150px;
+  text-align: center;
+}
+
+form#login-form input {
+  color: #000;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(43, 10, 324, 0.3);
+  outline: none;
+  font-size: 30px;
+}
+
+form#login-form button {
+  background-color: rgb(16, 29, 119);
+  /* 버튼 배경색 */
+  color: rgb(255, 255, 255);
+  /* 버튼 텍스트 색상 */
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(188, 81, 81, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* 호버 시 배경색 변경 효과 */
+}
+
+form#login-form button:hover {
+  background-color: #57c5c5;
+  /* 호버 시 배경색 변경 */
+}
+
+#clock {
+  font-family: "Roboto Slab", sans-serif;
+  position: absolute;
+  font-size: 5rem;
+  top: 50px;
+}
+
+#today {
+  font-family: "Roboto Slab", sans-serif;
+  position: absolute;
+  top: 0;
+  font-size: 3rem;
+  width: 100%;
+  padding-top: 0px;
+}
+
+#greeting {
+  font-size: 2rem;
+  position: fixed;
+  width: 100%;
+  top: 150px;
+}
+
+input[type="text"]::placeholder {
+  color: #fff;
+  text-decoration: underline;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+.todo-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 5px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  width: 100%;
+  margin-left: 65px;
+}
+
+#todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#todo-input {
+  color: #fff;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  margin-top: 1rem;
+  margin-left: -8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+#todo-list li {
+  position: relative;
+  font-size: 20px;
+  line-height: 1.5;
+  padding: 10px 0;
+}
+
+#todo-list button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 20px;
+  color: #333;
+  padding: 0 5px;
+}
+
+#todo-list button::after {
+  content: "\00d7";
+  /* x 아이콘 */
+  font-weight: 900;
+  font-size: 20pt;
+}
+
+#show-todo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(89, 115, 175, 0.2);
+  color: #fff;
+  font-size: 24px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#show-todo:hover {
+  transform: scale(1.1);
+  background-color: #f6f6f6;
+  color: #333;
+}
+
+#todo-container {
+  position: relative;
+  height: 500px;
+  position: fixed;
+  bottom: 130px;
+  right: 30px;
+  padding: 10px;
+  background-color: rgba(147, 165, 114, 0.3);
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  font-style: italic;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 55px;
+}
+
+#quotes span {
+  display: block;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: relative;
+  text-decoration: underline;
+}
+
+#quotes span.author {
+  font-size: 1.2rem;
+  bottom: -20px;
+  /* 밑줄 아래에 위치하도록 설정 */
+  text-decoration: none;
+  opacity: 0.5;
+  /* 처음에는 살짝 투명하게 */
+  transform: translateY(10px);
+  /* 처음에는 약간 내려서 보이게 */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  /* transition 효과를 줌 (자연스럽게 보여지는 효과) */
+}
+
+#quotes:hover span.author {
+  opacity: 1;
+  /* hover시 완전히 보이게 */
+  transform: translateY(0);
+  /* hover시에 위로 올라가면서 보이게 */
+}
+
+p {
+  color: #fff;
+  position: absolute;
+  bottom: -10px;
+  left: 10px;
+}
+
+#delete-all-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#delete-all-btn:hover {
+  background-color: #c0392b;
+}
+
+#weather-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+  background-color: rgba(89, 115, 175, 0.2);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#weather {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#weather span:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#weather span:last-child {
+  font-size: 1rem;
 }
