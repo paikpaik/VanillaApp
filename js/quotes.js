@@ -1,6 +1,3 @@
-const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quote span:last-child");
-
 const quotes = [
   {
     quote:
@@ -67,7 +64,9 @@ const quotes = [
     author: "존 R. 우든",
   },
 ];
+const quote = document.querySelector("#quotes span:first-child");
+const author = document.querySelector("#quotes span:last-child");
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = todaysQuote.quote;
-author.innerText = todaysQuote.author;
+quote.innerHTML = todaysQuote.quote;
+author.innerHTML = todaysQuote.author;
