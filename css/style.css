@@ -1,35 +1,4 @@
-/* 스마트폰 모바일(세로) */
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
-  body {
-    font-size: 16px;
-    /* 폰트 크기 조정 */
-    width: 100%;
-    /* 가로폭 조정 */
-    margin: 0;
-    /* 바깥 여백 제거 */
-    padding: 0;
-    /* 안쪽 여백 제거 */
-  }
-}
-
-.hidden {
-  display: none;
-}
-
-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: -1;
-  opacity: 80%;
-}
-
-/* 이미지를 배경 이미지로 넣기 위한 css */
+/* 기본 스타일 */
 
 body {
   font-family: "Roboto Slab", sans-serif;
@@ -38,28 +7,42 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
-  /* 웹페이지에 스크롤바 생기는거 방지 */
+  overflow: hidden; /* 스크롤바 방지 */
 }
 
-#login-form,
+/* 공통 모바일 스타일 */
+
 #clock,
 #today,
 #greeting,
 #todo-form,
 #todo-list {
   color: #e672a0;
-  width: 400px;
-  max-width: 100%;
+  width: 100%;
   margin: 1rem;
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
 }
 
+/* 이미지 스타일 수정 */
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* 로그인 폼 스타일 수정 */
+
 form#login-form {
   position: relative;
-  bottom: 150px;
   text-align: center;
 }
 
@@ -77,54 +60,37 @@ form#login-form input {
 
 form#login-form button {
   background-color: rgb(16, 29, 119);
-  /* 버튼 배경색 */
   color: rgb(255, 255, 255);
-  /* 버튼 텍스트 색상 */
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
   box-shadow: 1px 1px 3px rgba(188, 81, 81, 0.3);
   cursor: pointer;
   transition: background-color 0.3s ease;
-  /* 호버 시 배경색 변경 효과 */
 }
 
 form#login-form button:hover {
   background-color: #57c5c5;
-  /* 호버 시 배경색 변경 */
 }
 
+/* 시계와 날짜 스타일 수정 */
+
 #clock {
-  font-family: "Roboto Slab", sans-serif;
-  position: absolute;
-  font-size: 5rem;
-  top: 50px;
+  font-size: 3rem;
+  top: 20px;
 }
 
 #today {
-  font-family: "Roboto Slab", sans-serif;
-  position: absolute;
+  font-size: 2rem;
   top: 0;
-  font-size: 3rem;
-  width: 100%;
-  padding-top: 0px;
 }
 
 #greeting {
-  font-size: 2rem;
-  position: fixed;
-  width: 100%;
-  top: 150px;
+  font-size: 1.5rem;
+  top: 50px;
 }
 
-input[type="text"]::placeholder {
-  color: #fff;
-  text-decoration: underline;
-}
-
-::placeholder {
-  text-align: center;
-}
+/* 할 일 목록 스타일 수정 */
 
 .todo-container {
   background-color: rgba(0, 0, 0, 0.2);
@@ -133,7 +99,6 @@ input[type="text"]::placeholder {
   margin-bottom: 10px;
   opacity: 0.9;
   width: 100%;
-  margin-left: 65px;
 }
 
 #todo-list {
@@ -154,14 +119,13 @@ input[type="text"]::placeholder {
   border-radius: 5px;
   border: none;
   margin-top: 1rem;
-  margin-left: -8px;
   background-color: rgba(0, 0, 0, 0.3);
   outline: none;
 }
 
 #todo-list li {
   position: relative;
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 1.5;
   padding: 10px 0;
 }
@@ -175,16 +139,15 @@ input[type="text"]::placeholder {
   border: none;
   cursor: pointer;
   outline: none;
-  font-size: 20px;
+  font-size: 1rem;
   color: #333;
   padding: 0 5px;
 }
 
 #todo-list button::after {
   content: "\00d7";
-  /* x 아이콘 */
   font-weight: 900;
-  font-size: 20pt;
+  font-size: 1rem;
 }
 
 #show-todo {
@@ -193,7 +156,7 @@ input[type="text"]::placeholder {
   right: 20px;
   background-color: rgba(89, 115, 175, 0.2);
   color: #fff;
-  font-size: 24px;
+  font-size: 1.5rem;
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
@@ -258,21 +221,15 @@ input[type="text"]::placeholder {
 #quotes span.author {
   font-size: 1.2rem;
   bottom: -20px;
-  /* 밑줄 아래에 위치하도록 설정 */
   text-decoration: none;
   opacity: 0.5;
-  /* 처음에는 살짝 투명하게 */
   transform: translateY(10px);
-  /* 처음에는 약간 내려서 보이게 */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  /* transition 효과를 줌 (자연스럽게 보여지는 효과) */
 }
 
 #quotes:hover span.author {
   opacity: 1;
-  /* hover시 완전히 보이게 */
   transform: translateY(0);
-  /* hover시에 위로 올라가면서 보이게 */
 }
 
 p {
@@ -328,3 +285,13 @@ p {
 #weather span:last-child {
   font-size: 1rem;
 }
+
+/* 모바일 화면 크기에 대한 스타일 */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 479px) {
+  body {
+    font-size: 16px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
